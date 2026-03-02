@@ -93,14 +93,11 @@ const loginFoodPartner = async (req, res) => {
       maxAge: 23 * 60 * 60 * 1000,
     });
 
-    return res
-      .status(200)
-      .json({
-        message: "Food partner Logged in successfully!",
-        data: foodParther,
-        success: true,
-      });
-      
+    return res.status(200).json({
+      message: "Food partner Logged in successfully!",
+      data: foodParther,
+      success: true,
+    });
   } catch (err) {
     console.log(`Error: ${err}`);
     return res
@@ -109,4 +106,26 @@ const loginFoodPartner = async (req, res) => {
   }
 };
 
-module.exports = { registerFoodPartner, loginFoodPartner };
+// Logout FoodPartner
+
+const logoutFoodPartner = async (req, res) => {
+  try {
+    res.clearCookie("token", {
+      sameSite: true,
+      secure: false,
+    });
+
+    return res
+      .status(200)
+      .json({
+        message: "Food Partner Logged out successfully!",
+        success: true,
+      });
+  } catch (err) {
+    return res
+      .status(500)
+      .json({ message: "Something went Wrong!", success: false });
+  }
+};
+
+module.exports = { registerFoodPartner, loginFoodPartner, logoutFoodPartner };
