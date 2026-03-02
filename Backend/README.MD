@@ -6,3 +6,4 @@
 - Connect app with Database
 - Install the validator for validation 
 - Create the UserModel
+- Create the registerUser, loginUser and logoutUser controller successfully inside the auth.controller.js file
