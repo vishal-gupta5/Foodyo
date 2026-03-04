@@ -16,11 +16,11 @@ app.use("/foodPartner", foodPartnerRouter);
 
 connectDB()
   .then(() => {
+    console.log("Database Connection is established!");
     app.listen(PORT, () => {
-      console.log("Database connection is established!");
-      console.log(`The app is sucessfully running on ${PORT}`);
+      console.log(`Server is successfully running on ${PORT}`);
     });
   })
   .catch((err) => {
-    console.log(`Database can't be connected!`);
+    console.error("Database can't be connected!");
   });

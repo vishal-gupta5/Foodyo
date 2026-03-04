@@ -9,3 +9,4 @@
 - Create the registerUser, loginUser and logoutUser controller successfully inside the auth.controller.js file
 - Create the registerFoodPartner and LoginfoodPartner controller succesfully inside the foodPartner.controller.js file
 - Create logoutFoodController successfully inside foodParnter.controller.js file 
+- Create food model
